@@ -1,0 +1,6 @@
+framework module Pods_TestAuth_TestAuthUITests {
+  umbrella header "Pods-TestAuth-TestAuthUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

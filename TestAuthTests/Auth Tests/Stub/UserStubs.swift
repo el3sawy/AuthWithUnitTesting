@@ -10,7 +10,7 @@ import Foundation
 
 
 struct UserStubs {
-    static func createUser() -> UserModel {
+    static func createUser() -> UserModelProtocol {
         let user = UserModel(name: "Ahmed", phone: "01066336379", email: "ahmed@vois.com", password: "123456")
         return user
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E281A0926B4808D00F2F392 /* LoginProcessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E281A0826B4808D00F2F392 /* LoginProcessTests.swift */; };
+		4ED4FF5226B427FA00B45F83 /* LoginProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED4FF5126B427FA00B45F83 /* LoginProcess.swift */; };
 		5424A1EB9E0CC9E11E84ECB3 /* Pods_TestAuth_TestAuthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509A56F1EDC7796485638EC7 /* Pods_TestAuth_TestAuthUITests.framework */; };
 		927BC01526B2902200165169 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BC01326B2902200165169 /* RegisterViewController.swift */; };
 		927BC01626B2902200165169 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927BC01426B2902200165169 /* RegisterViewController.xib */; };
@@ -28,8 +30,8 @@
 		92CAC6CB26B1C7F10062795C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CAC6C926B1C7F10062795C /* LaunchScreen.storyboard */; };
 		92CAC6E126B1C7F10062795C /* TestAuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6E026B1C7F10062795C /* TestAuthUITests.swift */; };
 		92CAC6F326B1D8540062795C /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6F226B1D8540062795C /* LocalStorage.swift */; };
-		92CAC6F626B1D8E10062795C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6F526B1D8E10062795C /* UserModel.swift */; };
-		92E1D26026B1FCF500B7EB21 /* UsetInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */; };
+		92CAC6F626B1D8E10062795C /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6F526B1D8E10062795C /* UserDataModel.swift */; };
+		92E1D26026B1FCF500B7EB21 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D25F26B1FCF500B7EB21 /* UserModel.swift */; };
 		A9C03B4A111AF352561520FE /* Pods_TestAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE97DC7AB56E85597DE9FF0F /* Pods_TestAuth.framework */; };
 		E3DF877C74783FA8A21EB524 /* Pods_TestAuthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20677C8B8158A4C808D86BEF /* Pods_TestAuthTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		20677C8B8158A4C808D86BEF /* Pods_TestAuthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAuthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E281A0826B4808D00F2F392 /* LoginProcessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProcessTests.swift; sourceTree = "<group>"; };
+		4ED4FF5126B427FA00B45F83 /* LoginProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProcess.swift; sourceTree = "<group>"; };
 		509A56F1EDC7796485638EC7 /* Pods_TestAuth_TestAuthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAuth_TestAuthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E757460A7226CFE5EA6074 /* Pods-TestAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuthTests.debug.xcconfig"; path = "Target Support Files/Pods-TestAuthTests/Pods-TestAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D8345B471A7DE682980A29C /* Pods-TestAuth-TestAuthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth-TestAuthUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,8 +86,8 @@
 		92CAC6E026B1C7F10062795C /* TestAuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAuthUITests.swift; sourceTree = "<group>"; };
 		92CAC6E226B1C7F10062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CAC6F226B1D8540062795C /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
-		92CAC6F526B1D8E10062795C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsetInputForm.swift; sourceTree = "<group>"; };
+		92CAC6F526B1D8E10062795C /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		92E1D25F26B1FCF500B7EB21 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AE97DC7AB56E85597DE9FF0F /* Pods_TestAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF053392EA55A40F6A2C8278 /* Pods-TestAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth.debug.xcconfig"; path = "Target Support Files/Pods-TestAuth/Pods-TestAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		B05A86C4DDE098AA75D706B5 /* Pods-TestAuth-TestAuthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth-TestAuthUITests.release.xcconfig"; path = "Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +133,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4E281A0726B4807300F2F392 /* Tests  */ = {
+			isa = PBXGroup;
+			children = (
+				4E281A0826B4808D00F2F392 /* LoginProcessTests.swift */,
+			);
+			path = "Tests ";
+			sourceTree = "<group>";
+		};
 		927BC01026B28FE700165169 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +180,7 @@
 		929CF04C26B31233004A94E0 /* Auth Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4E281A0726B4807300F2F392 /* Tests  */,
 				929CF05626B314FE004A94E0 /* Stub */,
 				929CF04E26B31241004A94E0 /* Spy */,
 				929CF04D26B3123A004A94E0 /* Mock */,
@@ -328,6 +341,7 @@
 			children = (
 				92CAC6F226B1D8540062795C /* LocalStorage.swift */,
 				927BC01726B294E400165169 /* AppResponse.swift */,
+				4ED4FF5126B427FA00B45F83 /* LoginProcess.swift */,
 			);
 			path = "Local Stoarge";
 			sourceTree = "<group>";
@@ -335,8 +349,8 @@
 		92CAC6F426B1D8D30062795C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92CAC6F526B1D8E10062795C /* UserModel.swift */,
-				92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */,
+				92CAC6F526B1D8E10062795C /* UserDataModel.swift */,
+				92E1D25F26B1FCF500B7EB21 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,8 +610,9 @@
 			files = (
 				92CAC6BF26B1C7EF0062795C /* AppDelegate.swift in Sources */,
 				927BC01526B2902200165169 /* RegisterViewController.swift in Sources */,
+				4ED4FF5226B427FA00B45F83 /* LoginProcess.swift in Sources */,
 				927BC01826B294E400165169 /* AppResponse.swift in Sources */,
-				92CAC6F626B1D8E10062795C /* UserModel.swift in Sources */,
+				92CAC6F626B1D8E10062795C /* UserDataModel.swift in Sources */,
 				929CF05E26B322A9004A94E0 /* LoginViewController.swift in Sources */,
 				927BC01B26B29C3300165169 /* AuthRepository.swift in Sources */,
 				929CF06426B32867004A94E0 /* ViewCintroller+.swift in Sources */,
@@ -605,7 +620,7 @@
 				929CF06126B325EB004A94E0 /* LoginViewPresenter.swift in Sources */,
 				92CAC6F326B1D8540062795C /* LocalStorage.swift in Sources */,
 				929CF06726B329A3004A94E0 /* Validations.swift in Sources */,
-				92E1D26026B1FCF500B7EB21 /* UsetInputForm.swift in Sources */,
+				92E1D26026B1FCF500B7EB21 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +633,7 @@
 				929CF05326B312C4004A94E0 /* LocalStorageSpy.swift in Sources */,
 				929CF05526B3134E004A94E0 /* AuthRepoMock.swift in Sources */,
 				929CF06E26B33246004A94E0 /* ValidationsTests.swift in Sources */,
+				4E281A0926B4808D00F2F392 /* LoginProcessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

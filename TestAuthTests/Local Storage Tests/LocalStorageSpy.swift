@@ -10,17 +10,16 @@ import Foundation
 
 class LocalStorageSpy: LocalStorageProtocol {
     
+    // MARK: - Testing Properties
     var isCalledAddNewUser = false
-    var isCalleGetUserUser = false
+    var isCalleGetUserData = false
     
-    func addNewUser(_ user: UserModel) -> AppResponse<Bool> {
+    // MARK: - Spy Functions
+    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>) -> Void) {
         isCalledAddNewUser = true
-        return AppResponse.success(true)
     }
     
-    func getUser(email: String) -> AppResponse<UserModel> {
-        isCalleGetUserUser = true
-        let user = UserStubs.createUser()
-        return AppResponse.success(user)
+    func getUserData(email: String, completion: (AppResponse<UserModelProtocol>) -> Void) {
+        isCalleGetUserData = true
     }
 }

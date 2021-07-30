@@ -3,19 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5424A1EB9E0CC9E11E84ECB3 /* Pods_TestAuth_TestAuthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509A56F1EDC7796485638EC7 /* Pods_TestAuth_TestAuthUITests.framework */; };
+		927BC01526B2902200165169 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BC01326B2902200165169 /* RegisterViewController.swift */; };
+		927BC01626B2902200165169 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927BC01426B2902200165169 /* RegisterViewController.xib */; };
+		927BC01826B294E400165169 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BC01726B294E400165169 /* AppResponse.swift */; };
+		927BC01B26B29C3300165169 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BC01A26B29C3300165169 /* AuthRepository.swift */; };
+		929CF05326B312C4004A94E0 /* LocalStorageSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF05226B312C4004A94E0 /* LocalStorageSpy.swift */; };
+		929CF05526B3134E004A94E0 /* AuthRepoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF05426B3134E004A94E0 /* AuthRepoMock.swift */; };
+		929CF05826B31512004A94E0 /* UserStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF05726B31512004A94E0 /* UserStubs.swift */; };
+		929CF05B26B31A8F004A94E0 /* AuthRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF05A26B31A8F004A94E0 /* AuthRepoTests.swift */; };
+		929CF05E26B322A9004A94E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF05C26B322A9004A94E0 /* LoginViewController.swift */; };
+		929CF05F26B322A9004A94E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929CF05D26B322A9004A94E0 /* LoginViewController.xib */; };
+		929CF06126B325EB004A94E0 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF06026B325EA004A94E0 /* LoginViewPresenter.swift */; };
+		929CF06426B32867004A94E0 /* ViewCintroller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF06326B32867004A94E0 /* ViewCintroller+.swift */; };
+		929CF06726B329A3004A94E0 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF06626B329A3004A94E0 /* Validations.swift */; };
+		929CF06926B329EA004A94E0 /* AuthErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF06826B329EA004A94E0 /* AuthErrorEnum.swift */; };
+		929CF06E26B33246004A94E0 /* ValidationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CF06D26B33246004A94E0 /* ValidationsTests.swift */; };
 		92CAC6BF26B1C7EF0062795C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6BE26B1C7EF0062795C /* AppDelegate.swift */; };
-		92CAC6C126B1C7EF0062795C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6C026B1C7EF0062795C /* SceneDelegate.swift */; };
-		92CAC6C326B1C7EF0062795C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6C226B1C7EF0062795C /* ViewController.swift */; };
-		92CAC6C626B1C7EF0062795C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CAC6C426B1C7EF0062795C /* Main.storyboard */; };
 		92CAC6C826B1C7F10062795C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92CAC6C726B1C7F10062795C /* Assets.xcassets */; };
 		92CAC6CB26B1C7F10062795C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CAC6C926B1C7F10062795C /* LaunchScreen.storyboard */; };
-		92CAC6D626B1C7F10062795C /* TestAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6D526B1C7F10062795C /* TestAuthTests.swift */; };
 		92CAC6E126B1C7F10062795C /* TestAuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6E026B1C7F10062795C /* TestAuthUITests.swift */; };
+		92CAC6F326B1D8540062795C /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6F226B1D8540062795C /* LocalStorage.swift */; };
+		92CAC6F626B1D8E10062795C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CAC6F526B1D8E10062795C /* UserModel.swift */; };
+		92E1D26026B1FCF500B7EB21 /* UsetInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */; };
 		A9C03B4A111AF352561520FE /* Pods_TestAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE97DC7AB56E85597DE9FF0F /* Pods_TestAuth.framework */; };
 		E3DF877C74783FA8A21EB524 /* Pods_TestAuthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20677C8B8158A4C808D86BEF /* Pods_TestAuthTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,20 +56,34 @@
 		509A56F1EDC7796485638EC7 /* Pods_TestAuth_TestAuthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAuth_TestAuthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E757460A7226CFE5EA6074 /* Pods-TestAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuthTests.debug.xcconfig"; path = "Target Support Files/Pods-TestAuthTests/Pods-TestAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D8345B471A7DE682980A29C /* Pods-TestAuth-TestAuthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth-TestAuthUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		927BC01326B2902200165169 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		927BC01426B2902200165169 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		927BC01726B294E400165169 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
+		927BC01A26B29C3300165169 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		929CF05226B312C4004A94E0 /* LocalStorageSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageSpy.swift; sourceTree = "<group>"; };
+		929CF05426B3134E004A94E0 /* AuthRepoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepoMock.swift; sourceTree = "<group>"; };
+		929CF05726B31512004A94E0 /* UserStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStubs.swift; sourceTree = "<group>"; };
+		929CF05A26B31A8F004A94E0 /* AuthRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepoTests.swift; sourceTree = "<group>"; };
+		929CF05C26B322A9004A94E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		929CF05D26B322A9004A94E0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		929CF06026B325EA004A94E0 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
+		929CF06326B32867004A94E0 /* ViewCintroller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewCintroller+.swift"; sourceTree = "<group>"; };
+		929CF06626B329A3004A94E0 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		929CF06826B329EA004A94E0 /* AuthErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorEnum.swift; sourceTree = "<group>"; };
+		929CF06D26B33246004A94E0 /* ValidationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationsTests.swift; sourceTree = "<group>"; };
 		92CAC6BB26B1C7EF0062795C /* TestAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CAC6BE26B1C7EF0062795C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92CAC6C026B1C7EF0062795C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92CAC6C226B1C7EF0062795C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		92CAC6C526B1C7EF0062795C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92CAC6C726B1C7F10062795C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92CAC6CA26B1C7F10062795C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92CAC6CC26B1C7F10062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CAC6D126B1C7F10062795C /* TestAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92CAC6D526B1C7F10062795C /* TestAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAuthTests.swift; sourceTree = "<group>"; };
 		92CAC6D726B1C7F10062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92CAC6DC26B1C7F10062795C /* TestAuthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAuthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CAC6E026B1C7F10062795C /* TestAuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAuthUITests.swift; sourceTree = "<group>"; };
 		92CAC6E226B1C7F10062795C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CAC6F226B1D8540062795C /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		92CAC6F526B1D8E10062795C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsetInputForm.swift; sourceTree = "<group>"; };
 		AE97DC7AB56E85597DE9FF0F /* Pods_TestAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF053392EA55A40F6A2C8278 /* Pods-TestAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth.debug.xcconfig"; path = "Target Support Files/Pods-TestAuth/Pods-TestAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		B05A86C4DDE098AA75D706B5 /* Pods-TestAuth-TestAuthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAuth-TestAuthUITests.release.xcconfig"; path = "Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +129,116 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		927BC01026B28FE700165169 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				927BC01226B28FF900165169 /* Register */,
+				927BC01126B28FF200165169 /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		927BC01126B28FF200165169 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				929CF05C26B322A9004A94E0 /* LoginViewController.swift */,
+				929CF05D26B322A9004A94E0 /* LoginViewController.xib */,
+				929CF06026B325EA004A94E0 /* LoginViewPresenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		927BC01226B28FF900165169 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				927BC01326B2902200165169 /* RegisterViewController.swift */,
+				927BC01426B2902200165169 /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		927BC01926B29C2000165169 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				927BC01A26B29C3300165169 /* AuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		929CF04C26B31233004A94E0 /* Auth Tests */ = {
+			isa = PBXGroup;
+			children = (
+				929CF05626B314FE004A94E0 /* Stub */,
+				929CF04E26B31241004A94E0 /* Spy */,
+				929CF04D26B3123A004A94E0 /* Mock */,
+			);
+			path = "Auth Tests";
+			sourceTree = "<group>";
+		};
+		929CF04D26B3123A004A94E0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		929CF04E26B31241004A94E0 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		929CF04F26B31258004A94E0 /* Local Storage Tests */ = {
+			isa = PBXGroup;
+			children = (
+				929CF05226B312C4004A94E0 /* LocalStorageSpy.swift */,
+			);
+			path = "Local Storage Tests";
+			sourceTree = "<group>";
+		};
+		929CF05626B314FE004A94E0 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				929CF05726B31512004A94E0 /* UserStubs.swift */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		929CF05926B31A57004A94E0 /* Auth Repso Tests */ = {
+			isa = PBXGroup;
+			children = (
+				929CF05426B3134E004A94E0 /* AuthRepoMock.swift */,
+				929CF05A26B31A8F004A94E0 /* AuthRepoTests.swift */,
+			);
+			path = "Auth Repso Tests";
+			sourceTree = "<group>";
+		};
+		929CF06226B32858004A94E0 /* Extentions  */ = {
+			isa = PBXGroup;
+			children = (
+				929CF06326B32867004A94E0 /* ViewCintroller+.swift */,
+			);
+			path = "Extentions ";
+			sourceTree = "<group>";
+		};
+		929CF06526B32992004A94E0 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				929CF06626B329A3004A94E0 /* Validations.swift */,
+				929CF06826B329EA004A94E0 /* AuthErrorEnum.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		929CF06A26B331EF004A94E0 /* Validations Tests */ = {
+			isa = PBXGroup;
+			children = (
+				929CF06D26B33246004A94E0 /* ValidationsTests.swift */,
+			);
+			path = "Validations Tests";
+			sourceTree = "<group>";
+		};
 		92CAC6B226B1C7EF0062795C = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +264,9 @@
 		92CAC6BD26B1C7EF0062795C /* TestAuth */ = {
 			isa = PBXGroup;
 			children = (
-				92CAC6BE26B1C7EF0062795C /* AppDelegate.swift */,
-				92CAC6C026B1C7EF0062795C /* SceneDelegate.swift */,
-				92CAC6C226B1C7EF0062795C /* ViewController.swift */,
-				92CAC6C426B1C7EF0062795C /* Main.storyboard */,
-				92CAC6C726B1C7F10062795C /* Assets.xcassets */,
-				92CAC6C926B1C7F10062795C /* LaunchScreen.storyboard */,
-				92CAC6CC26B1C7F10062795C /* Info.plist */,
+				92CAC6F026B1D81E0062795C /* Modules */,
+				92CAC6EF26B1D7C60062795C /* Resources */,
+				92CAC6EE26B1D7B60062795C /* Core */,
 			);
 			path = TestAuth;
 			sourceTree = "<group>";
@@ -140,7 +274,10 @@
 		92CAC6D426B1C7F10062795C /* TestAuthTests */ = {
 			isa = PBXGroup;
 			children = (
-				92CAC6D526B1C7F10062795C /* TestAuthTests.swift */,
+				929CF06A26B331EF004A94E0 /* Validations Tests */,
+				929CF05926B31A57004A94E0 /* Auth Repso Tests */,
+				929CF04F26B31258004A94E0 /* Local Storage Tests */,
+				929CF04C26B31233004A94E0 /* Auth Tests */,
 				92CAC6D726B1C7F10062795C /* Info.plist */,
 			);
 			path = TestAuthTests;
@@ -155,6 +292,55 @@
 			path = TestAuthUITests;
 			sourceTree = "<group>";
 		};
+		92CAC6EE26B1D7B60062795C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				92CAC6CC26B1C7F10062795C /* Info.plist */,
+				92CAC6BE26B1C7EF0062795C /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		92CAC6EF26B1D7C60062795C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92CAC6C926B1C7F10062795C /* LaunchScreen.storyboard */,
+				92CAC6C726B1C7F10062795C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92CAC6F026B1D81E0062795C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				929CF06526B32992004A94E0 /* Validations */,
+				929CF06226B32858004A94E0 /* Extentions  */,
+				927BC01926B29C2000165169 /* Repository */,
+				927BC01026B28FE700165169 /* Auth */,
+				92CAC6F426B1D8D30062795C /* Models */,
+				92CAC6F126B1D83A0062795C /* Local Stoarge */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		92CAC6F126B1D83A0062795C /* Local Stoarge */ = {
+			isa = PBXGroup;
+			children = (
+				92CAC6F226B1D8540062795C /* LocalStorage.swift */,
+				927BC01726B294E400165169 /* AppResponse.swift */,
+			);
+			path = "Local Stoarge";
+			sourceTree = "<group>";
+		};
+		92CAC6F426B1D8D30062795C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92CAC6F526B1D8E10062795C /* UserModel.swift */,
+				92E1D25F26B1FCF500B7EB21 /* UsetInputForm.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F46805B276D32C9CAC0C0433 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +351,6 @@
 				51E757460A7226CFE5EA6074 /* Pods-TestAuthTests.debug.xcconfig */,
 				B09D606DB268CD3B5E3ED94B /* Pods-TestAuthTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -180,6 +365,7 @@
 				92CAC6B726B1C7EF0062795C /* Sources */,
 				92CAC6B826B1C7EF0062795C /* Frameworks */,
 				92CAC6B926B1C7EF0062795C /* Resources */,
+				557E6EEBE1D2EE332DC47CFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +403,7 @@
 				92CAC6D826B1C7F10062795C /* Sources */,
 				92CAC6D926B1C7F10062795C /* Frameworks */,
 				92CAC6DA26B1C7F10062795C /* Resources */,
+				0A35A8E22131883F651F059C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,6 +429,7 @@
 					};
 					92CAC6D026B1C7F10062795C = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = 92CAC6BA26B1C7EF0062795C;
 					};
 					92CAC6DB26B1C7F10062795C = {
@@ -275,9 +463,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929CF05F26B322A9004A94E0 /* LoginViewController.xib in Resources */,
 				92CAC6CB26B1C7F10062795C /* LaunchScreen.storyboard in Resources */,
 				92CAC6C826B1C7F10062795C /* Assets.xcassets in Resources */,
-				92CAC6C626B1C7EF0062795C /* Main.storyboard in Resources */,
+				927BC01626B2902200165169 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +487,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A35A8E22131883F651F059C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestAuth-TestAuthUITests/Pods-TestAuth-TestAuthUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		557E6EEBE1D2EE332DC47CFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAuth/Pods-TestAuth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAuth/Pods-TestAuth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestAuth/Pods-TestAuth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2B7BFD3E0208B7ACE41F495 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,9 +594,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CAC6C326B1C7EF0062795C /* ViewController.swift in Sources */,
 				92CAC6BF26B1C7EF0062795C /* AppDelegate.swift in Sources */,
-				92CAC6C126B1C7EF0062795C /* SceneDelegate.swift in Sources */,
+				927BC01526B2902200165169 /* RegisterViewController.swift in Sources */,
+				927BC01826B294E400165169 /* AppResponse.swift in Sources */,
+				92CAC6F626B1D8E10062795C /* UserModel.swift in Sources */,
+				929CF05E26B322A9004A94E0 /* LoginViewController.swift in Sources */,
+				927BC01B26B29C3300165169 /* AuthRepository.swift in Sources */,
+				929CF06426B32867004A94E0 /* ViewCintroller+.swift in Sources */,
+				929CF06926B329EA004A94E0 /* AuthErrorEnum.swift in Sources */,
+				929CF06126B325EB004A94E0 /* LoginViewPresenter.swift in Sources */,
+				92CAC6F326B1D8540062795C /* LocalStorage.swift in Sources */,
+				929CF06726B329A3004A94E0 /* Validations.swift in Sources */,
+				92E1D26026B1FCF500B7EB21 /* UsetInputForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +613,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CAC6D626B1C7F10062795C /* TestAuthTests.swift in Sources */,
+				929CF05826B31512004A94E0 /* UserStubs.swift in Sources */,
+				929CF05B26B31A8F004A94E0 /* AuthRepoTests.swift in Sources */,
+				929CF05326B312C4004A94E0 /* LocalStorageSpy.swift in Sources */,
+				929CF05526B3134E004A94E0 /* AuthRepoMock.swift in Sources */,
+				929CF06E26B33246004A94E0 /* ValidationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,14 +645,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		92CAC6C426B1C7EF0062795C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92CAC6C526B1C7EF0062795C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92CAC6C926B1C7F10062795C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -551,7 +779,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestAuth/Info.plist;
+				INFOPLIST_FILE = TestAuth/Core/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +788,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ahmed.TestAuth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -570,7 +799,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestAuth/Info.plist;
+				INFOPLIST_FILE = TestAuth/Core/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,7 +808,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ahmed.TestAuth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -588,6 +818,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TestAuthTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -598,6 +829,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ahmed.TestAuthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestAuth.app/TestAuth";
@@ -610,6 +842,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TestAuthTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;

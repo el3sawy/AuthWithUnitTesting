@@ -9,6 +9,7 @@ import Foundation
 protocol LoginViewPresenterProtocol {
     var repo: AuthRepositoryProtocol {get}
     var view: LoginViewProtocol? {get}
+    var loginProcess: LoginProcessProtocol {get}
 }
 
 class LoginViewPresenter: LoginViewPresenterProtocol {
@@ -16,23 +17,19 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
     // MARK: - Dependencies
     var repo: AuthRepositoryProtocol
     weak var view: LoginViewProtocol?
+    var loginProcess: LoginProcessProtocol
     
     // MARK: - Initializers
-    init(view: LoginViewProtocol, repo: AuthRepositoryProtocol) {
+    init(view: LoginViewProtocol, repo: AuthRepositoryProtocol, loginProcess: LoginProcessProtocol) {
         self.view = view
         self.repo = repo
+        self.loginProcess = loginProcess
     }
 }
 
 //MARK:- Extensions
 extension LoginViewPresenter {
     func login(email: String) {
-        let response = repo.getUser(email: email)
-        switch response {
-        case .success(_):
-            self.view?.successLogin()
-        case .failure(let error):
-            self.view?.failedLogin(message: error.description)
-        }
+        
     }
 }

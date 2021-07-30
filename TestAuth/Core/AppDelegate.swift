@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// why login process in last func is 87.5
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

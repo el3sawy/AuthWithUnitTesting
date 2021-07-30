@@ -9,13 +9,13 @@ import Foundation
 import RealmSwift
 
 protocol LocalStorageProtocol {
-    func addNewUser(_ user: UserModel) -> AppResponse<Bool>
-    func getUser(email: String) -> AppResponse<UserModel>
+    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>)-> Void)
+    func getUserData(email: String, completion: (AppResponse<UserModelProtocol>)-> Void)
 }
 
 class LocalStorage: LocalStorageProtocol {
     var realm: Realm
-   
+    
     init() {
         do{
             self.realm = try Realm()
@@ -24,39 +24,39 @@ class LocalStorage: LocalStorageProtocol {
         }
     }
     
-    func addNewUser(_ user: UserModel) -> AppResponse<Bool> {
+    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>)-> Void) {
         guard !checkIfUserExist(email: user.email) else {
-            return AppResponse.failure(.userExist)
+            completion(AppResponse.failure(.error))
+            return
         }
-        
-        var response =  AppResponse.success(false)
         do{
             try realm.write {
-                realm.add(user)
-                response = AppResponse.success(true)
+                realm.add(user as! UserDataModel)
+                completion(AppResponse.success(true))
             }
         }catch {
-            response = AppResponse.failure(.error)
+            completion(AppResponse.failure(.error))
         }
-        
-        return response
     }
     
-    func getUser(email: String) -> AppResponse<UserModel>  {
-        guard let user = realm.object(ofType: UserModel.self, forPrimaryKey: email) else {
-            return AppResponse.failure(.userNotFound)
+    func getUserData(email: String, completion: (AppResponse<UserModelProtocol>)-> Void) {
+        guard let user = realm.object(ofType: UserDataModel.self, forPrimaryKey: email) else {
+            completion(AppResponse.failure(.userNotFound))
+            return
         }
-        return AppResponse.success(user)
+        completion(AppResponse.success(user))
     }
     
     private func checkIfUserExist(email: String) -> Bool {
-        let response = getUser(email: email)
-        
-        switch response {
-        case .success(_):
-            return true
-        case .failure(_):
-            return false
+        var isUserExist: Bool = false
+        getUserData(email: email) { response in
+            switch response {
+            case .success(_):
+                isUserExist = true
+            case .failure(_):
+                isUserExist = false
+            }
         }
+        return isUserExist
     }
 }

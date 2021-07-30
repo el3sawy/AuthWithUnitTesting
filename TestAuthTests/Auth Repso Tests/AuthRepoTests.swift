@@ -23,11 +23,11 @@ class AuthRepoTests: XCTestCase {
         localStorage = nil
     }
     
-    func test_AddNewUsersCalled_Success () {
+    func test_AddNewUsers_CalledSuccessfully () {
         //given
         let user = UserStubs.createUser()
         // when
-        let _ = stub.addNewUser(user)
+        stub.addNewUser(user) { _ in}
         //Then
         XCTAssertTrue(localStorage.isCalledAddNewUser, "Add new user func not called")
     }
@@ -35,13 +35,9 @@ class AuthRepoTests: XCTestCase {
     func test_GetUsersIsCalled_Success() {
         //given
         let email = UserStubs.createUser().email
-        
         // When
-        let _ = stub.getUser(email: email)
-    
+        stub.getUser(email: email) { _ in}
         //Then
-        XCTAssertTrue(localStorage.isCalleGetUserUser,  "Add get user data func not called")
-        
+        XCTAssertTrue(localStorage.isCalleGetUserData,  "Add get user data func not called")
     }
-    
 }

@@ -150,7 +150,6 @@ extension ValidationsTests {
     
     func test_passwordIsNil_returnEnterPasswordMessage() {
         //given
-        let pass = ""
         var authError =  AuthErrorEnum.emailEmpty
         //when and then
         XCTAssertThrowsError(try stub.password(value: nil)) { error in

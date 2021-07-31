@@ -7,14 +7,15 @@
 
 import Foundation
 protocol ValidationsProtocol {
-    func name(value: String?)throws -> String
-    func mobile(value:String?)throws -> String
-    func email(value:String?)throws -> String
-    func password(value:String?)throws -> String
+    @discardableResult func name(value: String?)throws -> String
+    @discardableResult func mobile(value:String?)throws -> String
+    @discardableResult func email(value:String?)throws -> String
+    @discardableResult func password(value:String?)throws -> String
 }
 
 class Validations: ValidationsProtocol {
     
+    @discardableResult
     func name(value: String?)throws -> String {
         guard !(value?.isEmpty ?? true)  else {
             throw AuthErrorEnum.nameEmpty
@@ -22,6 +23,7 @@ class Validations: ValidationsProtocol {
         return value!
     }
     
+    @discardableResult
     func mobile(value:String?)throws -> String {
         guard !(value?.isEmpty ?? true) else{
             throw AuthErrorEnum.mobileEmpty
@@ -33,6 +35,7 @@ class Validations: ValidationsProtocol {
         return value!
     }
     
+    @discardableResult
     func email(value:String?)throws -> String {
         guard !(value?.isEmpty ?? true)  else{
             throw AuthErrorEnum.emailEmpty
@@ -43,11 +46,12 @@ class Validations: ValidationsProtocol {
         return value!
     }
     
+    @discardableResult
     func password(value:String?)throws -> String {
         guard !(value?.isEmpty ?? true) else{
             throw AuthErrorEnum.passwordEmpty
         }
-        guard value!.count > 6 else {
+        guard value!.count >= 6 else {
             throw AuthErrorEnum.passwordCount
         }
         return value!

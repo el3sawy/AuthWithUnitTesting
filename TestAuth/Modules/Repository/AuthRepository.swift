@@ -9,8 +9,8 @@ import Foundation
 
 protocol AuthRepositoryProtocol {
     var localStorage: LocalStorageProtocol {get}
-    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>)-> Void)
-    func getUser(email: String, completion: (AppResponse<UserModelProtocol>) -> Void)
+    func addNewUser(_ user: UserModel, completion: @escaping (AppResponse<Bool>)-> Void)
+    func getUser(email: String, completion: @escaping (AppResponse<UserModel>) -> Void)
 }
 
 class AuthRepository: AuthRepositoryProtocol {
@@ -20,11 +20,11 @@ class AuthRepository: AuthRepositoryProtocol {
         self.localStorage = localStorage
     }
     
-    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>)-> Void) {
+    func addNewUser(_ user: UserModel, completion: @escaping (AppResponse<Bool>)-> Void) {
         localStorage.addNewUser(user, completion: completion)
     }
 
-    func getUser(email: String, completion: (AppResponse<UserModelProtocol>)-> Void) {
+    func getUser(email: String, completion: @escaping (AppResponse<UserModel>)-> Void) {
         localStorage.getUserData(email: email, completion: completion)
     }
 }

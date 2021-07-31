@@ -15,11 +15,11 @@ class LocalStorageSpy: LocalStorageProtocol {
     var isCalleGetUserData = false
     
     // MARK: - Spy Functions
-    func addNewUser(_ user: UserModelProtocol, completion: (AppResponse<Bool>) -> Void) {
+    func addNewUser(_ user: UserModel, completion: (AppResponse<Bool>) -> Void) {
         isCalledAddNewUser = true
     }
     
-    func getUserData(email: String, completion: (AppResponse<UserModelProtocol>) -> Void) {
+    func getUserData(email: String, completion: (AppResponse<UserModel>) -> Void) {
         isCalleGetUserData = true
     }
 }

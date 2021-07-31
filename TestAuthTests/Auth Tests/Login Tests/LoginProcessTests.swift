@@ -12,8 +12,7 @@ class LoginProcessTests: XCTestCase {
 
     var stub: LoginProcess!
     override func setUpWithError() throws {
-        let user = UserStubs.createUser()
-        stub = LoginProcess(email: user.email, password: user.password)
+        stub = LoginProcess()
     }
 
     override func tearDownWithError() throws {
@@ -25,7 +24,7 @@ class LoginProcessTests: XCTestCase {
         let user = UserStubs.createUser()
         let response = AppResponse.success(user)
         //When
-        let result = stub.login(response)
+        let result = stub.login(response, password: "123456")
         //Then
         switch result {
         
@@ -39,11 +38,11 @@ class LoginProcessTests: XCTestCase {
     }
     func test_LoginWithWrongPassword_FailLogin() {
         //Given
-        var user = UserStubs.createUser()
+        let user = UserStubs.createUser()
         user.password = "123"
         let response = AppResponse.success(user)
         //When
-        let result = stub.login(response)
+        let result = stub.login(response, password: "123456")
         //Then
         switch result {
         
@@ -56,9 +55,9 @@ class LoginProcessTests: XCTestCase {
     
     func test_LoginUserNotFound_FailLogin() {
         //Given
-        let response = AppResponse<UserModelProtocol>.failure(.userNotFound)
+        let response = AppResponse<UserModel>.failure(.userNotFound)
         //When
-        let result = stub.login(response)
+        let result = stub.login(response, password: "123456")
         //Then
         switch result {
         case .success(_):

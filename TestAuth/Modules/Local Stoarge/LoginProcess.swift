@@ -7,25 +7,17 @@
 
 import Foundation
 protocol LoginProcessProtocol {
-    var email: String {get}
-    var password: String {get}
-    func login(_ response: AppResponse<UserModelProtocol>) -> AppResponse<UserModelProtocol>
+    func login(_ response: AppResponse<UserModel>, password: String) -> AppResponse<UserModel>
 }
 
-struct LoginProcess: LoginProcessProtocol {
-    var email: String
-    var password: String
-    
-    init(email: String, password: String) {
-        self.email = email
+class LoginProcess: LoginProcessProtocol {
+   private var password: String = ""
+    func login(_ response: AppResponse<UserModel>, password: String) -> AppResponse<UserModel>  {
         self.password = password
-    }
-    
-    func login(_ response: AppResponse<UserModelProtocol>) -> AppResponse<UserModelProtocol>  {
         return handleLoginResponse(response)
     }
     
-    private func handleLoginResponse(_ response: AppResponse<UserModelProtocol>) -> AppResponse<UserModelProtocol> {
+    private func handleLoginResponse(_ response: AppResponse<UserModel>) -> AppResponse<UserModel> {
         
         switch response {
         
@@ -40,9 +32,10 @@ struct LoginProcess: LoginProcessProtocol {
         }
     }
     
-    private func checkIsMailAndPasswordIsCorrect(user: UserModelProtocol) -> Bool {
-        let userModel = UserModel(email: email, password: password)
-        if userModel == user as! UserModel {
+    private func checkIsMailAndPasswordIsCorrect(user: UserModel) -> Bool {
+        let userModel = UserModel()
+        userModel.password = password
+        if userModel == user {
             return true
         }else {
             return false

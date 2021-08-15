@@ -6,19 +6,15 @@
 //
 
 import UIKit
-// why login process in last func is 87.5
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow()
-        window?.rootViewController = AuthConfigurator.setVC(type: .login).toNavigation
+        let loginViewController = AuthConfigurator.getViewController(type: .login)
+        let navigation = UINavigationController(rootViewController: loginViewController)
+        window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-        
         return true
     }
-
 }
-

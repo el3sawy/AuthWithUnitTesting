@@ -9,44 +9,40 @@ import Foundation
 import RealmSwift
 
 protocol LocalStorageProtocol {
-    func addNewUser(_ user: UserModel, completion: (AppResponse<Bool>)-> Void)
-    func getUserData(email: String, completion: (AppResponse<UserModel>)-> Void)
+    func addNewUser(_ user: UserModel, completion: (Result<Bool>) -> Void)
+    func getUserData(email: String, completion: (Result<UserModel>) -> Void)
 }
 
 class LocalStorage: LocalStorageProtocol {
     var realm: Realm
-    
     init() {
-        do{
+        do {
             self.realm = try Realm()
-        }catch{
+        } catch {
             fatalError()
         }
     }
-    
-    func addNewUser(_ user: UserModel, completion: (AppResponse<Bool>)-> Void) {
+    func addNewUser(_ user: UserModel, completion: (Result<Bool>) -> Void) {
         guard !checkIfUserExist(email: user.email) else {
-            completion(AppResponse.failure(.userExist))
+            completion(Result.failure(.userExist))
             return
         }
-        do{
+        do {
             try realm.write {
                 realm.add(user)
-                completion(AppResponse.success(true))
+                completion(Result.success(true))
             }
-        }catch {
-            completion(AppResponse.failure(.error))
+        } catch {
+            completion(Result.failure(.error))
         }
     }
-    
-    func getUserData(email: String, completion: (AppResponse<UserModel>)-> Void) {
+    func getUserData(email: String, completion: (Result<UserModel>) -> Void) {
         guard let user = realm.object(ofType: UserModel.self, forPrimaryKey: email) else {
-            completion(AppResponse.failure(.userNotFound))
+            completion(Result.failure(.userNotFound))
             return
         }
-        completion(AppResponse.success(user))
+        completion(Result.success(user))
     }
-    
     private func checkIfUserExist(email: String) -> Bool {
         var isUserExist: Bool = false
         getUserData(email: email) { response in

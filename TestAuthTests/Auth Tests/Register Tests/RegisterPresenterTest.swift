@@ -4,72 +4,73 @@
 //
 //  Created by Ahmed Elesawy on 31/07/2021.
 //
-
+//
 import XCTest
 @testable import TestAuth
+
 class RegisterPresenterTest: XCTestCase {
-    
-    var view: RegisterViewSpy!
     var repo: AuthRepoMock!
-    var validation: Validations!
+    var validation: ValidationMock!
     var localStorageSpy: LocalStorageSpy!
-    var stub: RegisterPresenter!
-    
+    var sut: RegisterPresenter!
+    var router: AuthRouterSpy!
     override func setUpWithError() throws {
-        view = RegisterViewSpy()
         localStorageSpy = LocalStorageSpy()
+        router = AuthRouterSpy()
         repo = AuthRepoMock(localStorage: localStorageSpy)
-        validation = Validations()
-        stub = RegisterPresenter(view: view, repo: repo, validator: validation)
+        validation = ValidationMock()
+        sut = RegisterPresenter(repo: repo, validator: validation, router: router)
     }
 
     override func tearDownWithError() throws {
-        view = nil
+        router = nil
         repo = nil
         validation = nil
         localStorageSpy = nil
-        stub = nil
+        sut = nil
     }
-    
-    func test_AddNewUser_SuccessAdded() {
-        //given
+    func test_addNewUser_validData_successAdded() {
+        // Given
         let user = UserInputFormModel(name: "Ahmed", phone: "11111111111", email: "ahmed@ahmed.com", password: "12121212")
         // When
-        stub.register(user: user)
+        sut.register(user: user)
         repo.successAddUser()
-        //Then
-        XCTAssertTrue(view.isCalledAddUser)
-        
+        // Then
+        XCTAssertTrue(router.isPushHome)
     }
-    
-    func test_AddNewUser_ErrorAdd() {
-        //given
+    func test_addNewUser_userNotFound_errorAdd() {
+        // given
         let user = UserInputFormModel(name: "Ahmed", phone: "11111111111", email: "ahmed@ahmed.com", password: "12121212")
         // When
-        stub.register(user: user)
+        sut.register(user: user)
         repo.simulateErrorAddUser()
-        //Then
-        XCTAssertFalse(view.isCalledAddUser)
-        XCTAssertEqual(view.errorMessage, ResponseError.error.description)
+        // Then
+        XCTAssertFalse(router.isPushHome)
+        XCTAssertEqual(router.alertMessage, ResponseError.error.description)
     }
-    
-    func test_AddNewUser_ErrorAddUserIsExits() {
-        //given
+    func test_addNewUser_userNotExist_errorAddUserIsExits() {
+        // Given
         let user = UserInputFormModel(name: "Ahmed", phone: "11111111111", email: "ahmed@ahmed.com", password: "12121212")
         // When
-        stub.register(user: user)
+        sut.register(user: user)
         repo.simulateUserIsExit()
-        //Then
-        XCTAssertFalse(view.isCalledAddUser)
-        XCTAssertEqual(view.errorMessage, ResponseError.userExist.description)
+        // Then
+        XCTAssertFalse(router.isPushHome)
+        XCTAssertEqual(router.alertMessage, ResponseError.userExist.description)
     }
-    
-    func test_AddNewUser_NameIsEmpty() {
-        //given
+    func test_AddNewUser_NameIsEmpty_showAlert() {
+        // Given
         let user = UserInputFormModel(name: "", phone: "11111111111", email: "ahmed@ahmed.com", password: "12121212")
         // When
-        stub.register(user: user)
-        //Then
-        XCTAssertEqual(view.errorMessage, AuthErrorEnum.nameEmpty.description)
+        validation.simulateEmptyName()
+        sut.register(user: user)
+        // Then
+        XCTAssert(router.isCalledShowAlert)
+    }
+    func test_dismiss_whenClickCancel_dismissRegisterViewController() {
+        // When
+        sut.dismiss()
+        // Then
+        XCTAssert(router.isCalledDismissViewController, "Dismiss view controller not called")
     }
 }

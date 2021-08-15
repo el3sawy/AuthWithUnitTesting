@@ -6,18 +6,18 @@
 //
 
 import Foundation
+typealias Result<T> = Swift.Result<T, ResponseError>
 
 enum AppResponse <T> {
     case success(T)
     case failure(ResponseError)
 }
 
-enum ResponseError {
+enum ResponseError: Error {
     case userExist
     case error
     case userNotFound
     case invalidUser
-    
     var description: String {
         switch self {
         case .userExist:

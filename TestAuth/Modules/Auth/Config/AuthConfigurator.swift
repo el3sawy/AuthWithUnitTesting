@@ -14,11 +14,8 @@ enum AuthConfiguratorType {
     case home(user: String)
 }
 struct AuthConfigurator {
-    
-    static func setVC(type: AuthConfiguratorType) -> UIViewController {
-        
+    static func getViewController(type: AuthConfiguratorType) -> UIViewController {
         switch type {
-        
         case .login:
             return login()
         case .register:
@@ -27,28 +24,30 @@ struct AuthConfigurator {
             return home(user: user)
         }
     }
-    
     private static func register() -> UIViewController {
         let localStorage = LocalStorage()
         let repo = AuthRepository(localStorage: localStorage)
         let view = RegisterViewController()
         let validator = Validations()
-        let presenter = RegisterPresenter(view: view, repo: repo, validator: validator)
+        let router = AuthRouter()
+        router.sourceViewController = view
+        let presenter = RegisterPresenter(repo: repo, validator: validator, router: router)
         view.presenter = presenter
         return view
     }
-    
     private static func login() -> UIViewController {
         let localStorage = LocalStorage()
         let repo = AuthRepository(localStorage: localStorage)
         let view = LoginViewController()
         let validator = Validations()
         let loginPrecess = LoginProcess()
-        let presenter = LoginPresenter(view: view, repo: repo, loginProcess: loginPrecess, validator: validator)
+        let loginUseCase = LoginUseCase(authRepository: repo, loginProcess: loginPrecess)
+        let router = AuthRouter()
+        router.sourceViewController = view
+        let presenter = LoginPresenter(loginUseCase: loginUseCase, validator: validator, router: router)
         view.presenter = presenter
         return view
     }
-    
     private static func home(user name: String) -> UIViewController {
         return HomeViewController(name: name)
     }

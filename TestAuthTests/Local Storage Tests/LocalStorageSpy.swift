@@ -9,17 +9,14 @@ import Foundation
 @testable import TestAuth
 
 class LocalStorageSpy: LocalStorageProtocol {
-    
     // MARK: - Testing Properties
     var isCalledAddNewUser = false
     var isCalleGetUserData = false
-    
     // MARK: - Spy Functions
-    func addNewUser(_ user: UserModel, completion: (AppResponse<Bool>) -> Void) {
+    func addNewUser(_ user: UserModel, completion: (Result<Bool>) -> Void) {
         isCalledAddNewUser = true
     }
-    
-    func getUserData(email: String, completion: (AppResponse<UserModel>) -> Void) {
+    func getUserData(email: String, completion: (Result<UserModel>) -> Void) {
         isCalleGetUserData = true
     }
 }

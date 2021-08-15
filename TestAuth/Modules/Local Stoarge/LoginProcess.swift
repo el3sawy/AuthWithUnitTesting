@@ -7,37 +7,33 @@
 
 import Foundation
 protocol LoginProcessProtocol {
-    func login(_ response: AppResponse<UserModel>, password: String) -> AppResponse<UserModel>
+    func login(_ response: Result<UserModel>, password: String) -> Result<UserModel>
 }
 
 class LoginProcess: LoginProcessProtocol {
    private var password: String = ""
-    func login(_ response: AppResponse<UserModel>, password: String) -> AppResponse<UserModel>  {
+    func login(_ response: Result<UserModel>, password: String) -> Result<UserModel> {
         self.password = password
         return handleLoginResponse(response)
     }
-    
-    private func handleLoginResponse(_ response: AppResponse<UserModel>) -> AppResponse<UserModel> {
-        
+    private func handleLoginResponse(_ response: Result<UserModel>) -> Result<UserModel> {
         switch response {
-        
         case .success(let user):
             let result = checkIsMailAndPasswordIsCorrect(user: user)
             guard result  else {
-                return AppResponse.failure(.invalidUser)
+                return Result.failure(.invalidUser)
             }
-            return AppResponse.success(user)
+            return Result.success(user)
         case .failure(_):
-            return AppResponse.failure(.userNotFound)
+            return Result.failure(.userNotFound)
         }
     }
-    
     private func checkIsMailAndPasswordIsCorrect(user: UserModel) -> Bool {
         let userModel = UserModel()
         userModel.password = password
         if userModel == user {
             return true
-        }else {
+        } else {
             return false
         }
     }

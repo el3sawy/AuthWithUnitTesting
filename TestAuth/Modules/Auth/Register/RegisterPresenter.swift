@@ -8,47 +8,50 @@
 import Foundation
 protocol RegisterPresenterProtocol {
     func register(user: UserInputFormModel)
+    func dismiss()
 }
 
-class RegisterPresenter: RegisterPresenterProtocol {
+class RegisterPresenter {
     // MARK: - Dependencies
     private var repo: AuthRepositoryProtocol
-    private weak var view: RegisterViewProtocol?
     private var validator: ValidationsProtocol
-  
+    private var router: AuthRouterProtocol
     // MARK: - Initializers
-    init(view: RegisterViewProtocol, repo: AuthRepositoryProtocol, validator: ValidationsProtocol) {
+    init(repo: AuthRepositoryProtocol, validator: ValidationsProtocol, router: AuthRouterProtocol) {
         self.repo = repo
-        self.view = view
         self.validator = validator
+        self.router = router
     }
-    
+}
+// MARK: - Extension
+extension RegisterPresenter: RegisterPresenterProtocol {
     func register(user: UserInputFormModel) {
         guard let userModel = validation(user: user) else {return}
         repo.addNewUser(userModel) { [weak self] response in
             guard let self = self else {return}
-            
             switch response {
             case .success(_):
-                self.view?.didSuccessAddUser()
+                self.router.pushHomeViewController(user: userModel.name)
             case .failure(let error):
-                self.view?.showMessage(error.description)
+                self.router.showAlert(message: error.description)
             }
         }
     }
-    
     private func validation(user: UserInputFormModel) -> UserModel? {
         do {
-           try validator.name(value: user.name)
+            try validator.name(value: user.name)
             try validator.mobile(value: user.phone)
             try validator.email(value: user.email)
-            try validator.password(value:  user.password)
+            try validator.password(value: user.password)
             let userModel = UserModel(user: user)
             return userModel
-        }catch(let error) {
+        } catch {
             guard let authError = error as? AuthErrorEnum else {return nil}
-            self.view?.showMessage(authError.description)
+            self.router.showAlert(message: authError.description)
             return nil
         }
+    }
+    func dismiss() {
+        router.dismissMe()
     }
 }

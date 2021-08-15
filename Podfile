@@ -6,6 +6,7 @@ target 'TestAuth' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'SwiftLint'
   # Pods for TestAuth
 
   target 'TestAuthTests' do

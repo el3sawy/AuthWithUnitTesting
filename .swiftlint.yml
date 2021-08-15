@@ -1,0 +1,11 @@
+
+#included:
+#  - TestAuth
+line_length:
+    warning: 150
+    ignores_comments: true
+
+excluded:
+   - ${PWD}/Pods
+
+

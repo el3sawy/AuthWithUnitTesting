@@ -8,57 +8,51 @@
 import Foundation
 protocol LoginPresenterProtocol {
     func login(email: String?, password: String?)
+    func presentRegister()
 }
 
-class LoginPresenter: LoginPresenterProtocol {
-    
+class LoginPresenter {
     // MARK: - Dependencies
-    private var repo: AuthRepositoryProtocol
-    private weak var view: LoginViewProtocol?
-    private var loginProcess: LoginProcessProtocol
+    private var loginUseCase: LoginUseCaseProtocol
     private var validator: ValidationsProtocol
-    
-    private var password: String = ""
+    private var router: AuthRouterProtocol
     // MARK: - Initializers
-    init(view: LoginViewProtocol, repo: AuthRepositoryProtocol, loginProcess: LoginProcessProtocol, validator:ValidationsProtocol) {
-        self.view = view
-        self.repo = repo
-        self.loginProcess = loginProcess
+    init(loginUseCase: LoginUseCaseProtocol, validator: ValidationsProtocol, router: AuthRouterProtocol) {
+        self.loginUseCase = loginUseCase
         self.validator = validator
+        self.router = router
     }
-    
 }
 
-//MARK:- Extensions
-extension LoginPresenter {
+// MARK: - Extensions
+extension LoginPresenter: LoginPresenterProtocol {
     func login(email: String?, password: String?) {
         guard validation(mail: email, password: password) else {return}
-        repo.getUser(email: email!) { [weak self] response in
+        loginUseCase.login(email: email!, password: password!) { [weak self] response in
             guard let self = self else {return}
-            self.handleResponse(response)
+            self.handleLoginResponse(response)
         }
     }
-    
     private func validation(mail: String?, password: String?) -> Bool {
         do {
             try validator.email(value: mail)
-            let password = try validator.password(value: password)
-            self.password = password
+            try validator.password(value: password)
             return true
-        }catch(let error) {
+        } catch {
             guard let authError = error as? AuthErrorEnum else {return false}
-            self.view?.showMessage(authError.description)
+            self.router.showAlert(message: authError.description)
             return false
         }
     }
-    
-    private func handleResponse(_ response:  AppResponse<UserModel>) {
-        let result = loginProcess.login(response, password: password)
-        switch result {
+    private func handleLoginResponse(_ response: Result<UserModel>) {
+        switch response {
         case .success(let value):
-            self.view?.successLogin(user: value)
+            router.pushHomeViewController(user: value.name)
         case .failure(let error):
-            self.view?.showMessage(error.description)
+            router.showAlert(message: error.description)
         }
+    }
+    func presentRegister() {
+        router.presentRegisterUser()
     }
 }

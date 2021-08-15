@@ -11,10 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="TestAuth" customModuleProvider="target">
             <connections>
-                <outlet property="txtEmail" destination="k2T-lC-Lw3" id="VIK-Ra-X1j"/>
-                <outlet property="txtMobile" destination="lMz-qg-JrU" id="VWv-6i-57M"/>
-                <outlet property="txtName" destination="aSN-0Q-psp" id="UzO-es-xKz"/>
-                <outlet property="txtPassword" destination="D2x-WW-q2T" id="8Vj-eM-lki"/>
+                <outlet property="dismissButton" destination="4GI-9s-sQY" id="vLU-mo-KI0"/>
+                <outlet property="emailTextField" destination="k2T-lC-Lw3" id="yXM-MO-Yse"/>
+                <outlet property="mobileTextField" destination="lMz-qg-JrU" id="164-E1-HZR"/>
+                <outlet property="nameTextField" destination="aSN-0Q-psp" id="c7u-xH-NuL"/>
+                <outlet property="passwordTextField" destination="D2x-WW-q2T" id="t6M-kP-Zm6"/>
+                <outlet property="registerButton" destination="Xly-86-utR" id="Kni-dR-pg8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -58,16 +60,25 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="btnRegisterTapped:" destination="-1" eventType="touchUpInside" id="tg7-mh-NiP"/>
+                                <action selector="buttonRegisterTapped:" destination="-1" eventType="touchUpInside" id="0mB-eG-zhk"/>
                             </connections>
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GI-9s-sQY">
+                    <rect key="frame" x="15" y="59" width="48" height="30"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="buttonDismissTapped:" destination="-1" eventType="touchUpInside" id="Z7H-bi-3lo"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="DRf-5P-NQv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="84Y-kJ-2Ml"/>
+                <constraint firstItem="4GI-9s-sQY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ldT-iu-iyC"/>
+                <constraint firstItem="4GI-9s-sQY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="s37-Wb-yk4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DRf-5P-NQv" secondAttribute="trailing" constant="15" id="vRl-1J-dza"/>
                 <constraint firstItem="DRf-5P-NQv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="zE6-ZR-41x"/>
             </constraints>

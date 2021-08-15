@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-enum AuthErrorEnum: LocalizedError {
+enum AuthErrorEnum: LocalizedError, Equatable {
     case mobileEmpty
     case mobileCount
     case emailEmpty
@@ -16,8 +15,7 @@ enum AuthErrorEnum: LocalizedError {
     case passwordEmpty
     case passwordCount
     case nameEmpty
-    
-    var description: String{
+    var description: String {
         switch self {
         case .mobileEmpty:
             return "Enter Mobile"
@@ -33,6 +31,13 @@ enum AuthErrorEnum: LocalizedError {
             return "Password must be more than 5 characters"
         case .nameEmpty:
             return "Enter name"
+        }
+    }
+    static func == (lhs: AuthErrorEnum, rhs: AuthErrorEnum) -> Bool {
+        if lhs.description == rhs.description {
+            return true
+        } else {
+            return false
         }
     }
 }

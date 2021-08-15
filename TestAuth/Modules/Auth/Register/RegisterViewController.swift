@@ -6,44 +6,27 @@
 //
 
 import UIKit
-protocol RegisterViewProtocol: NSObject {
-    func didSuccessAddUser()
-    func showMessage(_ message: String)
-}
 
 class RegisterViewController: UIViewController {
-
-    //MARK:- Outlets
-    @IBOutlet private weak var txtName: UITextField!
-    @IBOutlet private weak var txtMobile: UITextField!
-    @IBOutlet private weak var txtPassword: UITextField!
-    @IBOutlet private weak var txtEmail: UITextField!
-    
+    // MARK: - Outlets
+    @IBOutlet private(set) weak var nameTextField: UITextField!
+    @IBOutlet private(set) weak var mobileTextField: UITextField!
+    @IBOutlet private(set) weak var passwordTextField: UITextField!
+    @IBOutlet private(set) weak var emailTextField: UITextField!
+    @IBOutlet private(set) weak var registerButton: UIButton!
+    @IBOutlet private(set) weak var dismissButton: UIButton!
+    // MARK: - Variables
     var presenter: RegisterPresenterProtocol!
-    //MARK:- Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    //MARK:- Actions
-    @IBAction func btnRegisterTapped(_ sender: Any) {
+    // MARK: - Actions
+    @IBAction private func buttonRegisterTapped(_ sender: Any) {
        var user = UserInputFormModel()
-        user.name = txtName.text
-        user.email = txtEmail.text
-        user.password = txtPassword.text
-        user.phone = txtMobile.text
+        user.name = nameTextField.text
+        user.email = emailTextField.text
+        user.password = passwordTextField.text
+        user.phone = mobileTextField.text
         presenter.register(user: user)
     }
-}
-
-//MARK:- Extensions
-extension RegisterViewController: RegisterViewProtocol {
-    func didSuccessAddUser() {
-        let vc = AuthConfigurator.setVC(type: .home(user: txtName.text ?? ""))
-        push(vc)
-    }
-    
-    func showMessage(_ message: String) {
-        showAlert(message: message)
+    @IBAction private func buttonDismissTapped(_ sender: Any) {
+        presenter.dismiss()
     }
 }

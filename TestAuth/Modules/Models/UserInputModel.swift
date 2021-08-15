@@ -8,7 +8,6 @@
 import Foundation
 
 struct UserInputFormModel {
-    
     var name: String?
     var phone: String?
     var email: String?

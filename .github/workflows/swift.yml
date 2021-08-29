@@ -11,6 +11,13 @@ on:
     branches: [ main ]
 
 jobs:
+   SwiftLint:
+      runs-on: ubuntn-latest
+      steps:
+       - name: Repository checkout
+         uses: actions/checkout@v2
+       - name: Githun Action for swify Lint
+         uses: norio-nomura/actions-swiftlint@3.
    unit_tests:
       runs-on: macos-latest
       steps:

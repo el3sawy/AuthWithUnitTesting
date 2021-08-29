@@ -1,19 +1,25 @@
-name: Swift
+# This is a basic workflow to help you get started with Actions
 
+name: CI
+
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  build:
+   unit_tests:
+      runs-on: macos-latest
+      steps:
+       - name: Repository checkout
+         uses: actions/checkout@v2
+       - name: Select Xcode
+         run: sudo xcode-select -switch /Applications/Xcode_12.app
+       - name: Build
+         run:  xcodebuild clean build -workspace "TestAuth.xcworkspace" -scheme "TestAuth" -destination "platform=iOS Simulator,name=iPhone 8,OS=14.0" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+       - name: Unit Test 
+         run:  xcodebuild test -workspace "TestAuth.xcworkspace" -scheme "GithuActionDemo" -destination "platform=iOS Simulator,name=iPhone 8,OS=14.0"
 
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v

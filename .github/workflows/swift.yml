@@ -9,16 +9,19 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    paths:
+       - '.github/workflows/swiftlint.yml'
+       - '.swiftlint.yml'
+       - '**/*.swift'
 
 jobs:
-   SwiftLint:
-      runs-on: ubuntn-latest
-      steps:
-       - name: Repository checkout
-         uses: actions/checkout@v2
-       - name: Githun Action for swify Lint
-         uses: norio-nomura/actions-swiftlint@3.
-   unit_tests:
+  SwiftLint:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v1
+     - name: GitHub Action for SwiftLint
+       uses: norio-nomura/action-swiftlint@master
+  unit_tests:
       runs-on: macos-latest
       steps:
        - name: Repository checkout
